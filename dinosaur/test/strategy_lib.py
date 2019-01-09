@@ -2,8 +2,8 @@ from os.path import join
 from pandas import to_datetime, DataFrame, qcut, read_csv
 from pandas.tseries.offsets import MonthEnd
 
-from dinosaur.backtesting.interface import AbstractStrategy
-from dinosaur.backtesting.environment import LocalDataEnv
+from dinosaur.mod.interface import AbstractStrategy
+from dinosaur.mod.environment import LocalDataEnv
 
 
 class IndustrialIndicesBuyAndHold(AbstractStrategy):
@@ -255,10 +255,3 @@ class IndustryCyclingStrategy(AbstractStrategy):
         for name, account in self._accounts_holder.items():
             holder.update({name: account.turnover_log / 2})
         return DataFrame(holder)
-
-
-if __name__ == '__main__':
-    data_path = 'D:\\Programming Platform\\Projects\\FundIndustryCycling\\test'
-    test = FundSignalTesting(data_path)
-    test.run('2009-11-30', '2018-05-31')
-    print(test.summary)

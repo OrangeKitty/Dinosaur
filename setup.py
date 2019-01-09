@@ -10,7 +10,7 @@ requirements = [str(ir.req) for ir in parse_requirements("requirements.txt", ses
 setup(
     name='dinosaur',
     version=version,
-    description='A research project on China mutual fund industry allocation cycling',
+    description='A trading based backtesting platform',
     author='Zhao, Yunlu',
     author_email='t_One_8@yeah.net',
     requirements=requirements,
